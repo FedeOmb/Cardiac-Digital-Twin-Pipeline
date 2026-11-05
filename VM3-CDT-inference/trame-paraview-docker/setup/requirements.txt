@@ -1,0 +1,4 @@
+trame>=3.9
+trame-vtk
+trame-vuetify
+paraview-trame-components

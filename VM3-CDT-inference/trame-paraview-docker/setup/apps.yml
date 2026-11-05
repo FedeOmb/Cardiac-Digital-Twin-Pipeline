@@ -1,0 +1,13 @@
+trame:
+  cmd:
+    - /opt/paraview/bin/pvpython
+    - --venv
+    - /deploy/server/venv
+    - /deploy/pv-lite.py
+    - --host
+    - ${host}
+    - --port
+    - ${port}
+    - --authKey
+    - ${secret}
+    - --server

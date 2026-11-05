@@ -44,7 +44,22 @@ services:
     container_name: paraview-glance
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "3030:3000"
     volumes:
       - /data/:/data/:ro
       - /mnt/:/mnt/:ro
+
+  trame-docker:
+    build:
+      context: ./trame-paraview-docker/
+      dockerfile: Dockerfile
+    image: trame-paraview-docker:pv6.1
+    container_name: trame-docker
+    ports:
+      - "3000:80"
+    environment:
+      - TRAME_URL_PREFIX=/trame
+    volumes:
+      - /data/:/data/:ro
+      - /mnt/:/mnt/:ro
+    restart: unless-stopped
